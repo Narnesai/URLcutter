@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
+    <title>Url Cutter</title>
+</head>
+<body>
+    <div class="cont">
+        <div class="header">
+            <p>
+                <img src="/img/logo1.png" alt="">
+                <span>URL CUTTER</span>
+                <img src="/img/logo2.png" alt="">
+            </p>
+        </div>
+        <div class="form-cont">
+            <form autocomplete="off" action="/names" method="post">
+                <input type="text" required name="nameInp" id="nameInp" placeholder="Name">
+                <input type="url" required name="urlInp" id="urlInp" placeholder="Full Url">
+                <input type="submit" value="ADD">
+            </form>
+        </div>
+        <div class="table-cont">
+            <table>
+                <thead>
+                    <tr>
+                        <td class="sno">S.No</td>
+                        <td class="name">Name</td>
+                        <td class="url">URL</td>
+                        <td class="shorturl">Short URL</td>
+                        <td class="clicks">clicks</td>
+                        <td class="delete">Delete</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% userData.shortlinks.reverse().forEach((data,ind) => { %>
+                        <tr>
+                            <td class="sno"><%= ind+1 %></td>
+                            <td class="name"><%= data.urlname %></td>
+                            <td class="url"><%= data.url %> </td>
+                            <td class="shorturl"><a href="/redirect/<%= data.shortid %>" target="_blank"><%= data.shortid %></a></td>
+                            <td class="clicks"><%= data.click %> </td>
+                            <td class="delete"><a href="/delete/<%= data.shortid %>"><i class="fa fa-trash"  style="font-size:18px;"></i></a></td>
+                        </tr>
+                    <% }) %>    
+                </tbody>
+            </table>
+        </div>
+        <div class="profile">
+            <div class="profile-closed">
+                <img src="/img/profile.png" alt="">
+            </div>
+            <div class="profile-opened">
+                <p class="profile-data">Name: <span>
+                    <%= userData.name %>
+                </span></p>
+                <p class="profile-data">Mail: 
+                    <%= userData.username %>
+                </span></p>
+                <div class="btn-profile">
+                    <div class="btn-logout">
+                        <a href="/logout" role="button">Log Out</a>
+                    </div>
+                    <div class="btn-contact">
+                        <a href="mailto:9919008056@klu.ac.in">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <img class="closedown" src="/img/closedown.png" alt="">
+        </div>
+        <div class="empty">
+        </div>
+    </div>
+
+    <script>
+        var profileClosed=document.querySelector('.profile-closed')
+        var profileOpened=document.querySelector('.profile-opened')
+        var profile=document.querySelector('.profile')
+        var closedown=document.querySelector('.closedown')
+        var profileBtn=document.querySelector('.btn-profile')
+
+        profileClosed.addEventListener('click',function(){
+            profile.classList.add('test1')
+            profileClosed.classList.add('test2')
+            closedown.style.display='unset'
+            profileOpened.style.display='inherit'
+        })
+        closedown.addEventListener('click',function(){
+            closedown.style.display='none'
+            profile.classList.add('remove-test1')
+            profileClosed.classList.add('remove-test2')
+            profileOpened.classList.add('remove-test3')
+            profileOpened.classList.add('remove-test3-1')
+            profileBtn.style.display='none'
+
+            setTimeout(function(){
+                profile.classList.remove('remove-test1')
+                profileClosed.classList.remove('remove-test2')
+                profileOpened.classList.remove('remove-test3')
+                profileOpened.classList.remove('remove-test3-1')
+                profile.classList.remove('test1')
+                profileClosed.classList.remove('test2')
+                closedown.style.display='none'
+                profileBtn.style.display='flex'
+                profileOpened.style.display='none'
+            },110)
+
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&family=Ubuntu&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #E8EFF7;
+    width: 100vw;
+    max-width: 100%;
+}
+.cont{
+    height: 100%;
+    color: #323232;
+}
+.header{
+    display: flex;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.header p{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    text-shadow: 2px 2px 2px #323232 ;
+
+}
+.header img{
+    width: 90px;
+}
+.header span{
+    font-size: 54px;
+    color: #405cf5;
+    font-family: 'Suez One', serif;
+}
+form{
+    width: 450px;
+    height: 400px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 9px;
+}
+
+form input{
+    width: 320px;
+    height: 40px;
+    outline: none;
+    border-radius: 3px;
+    padding-left: 8px;
+    font-size: 15px;
+    border: 1px solid rgb(209, 209, 209);
+}
+form input:focus{
+    border: black 1px solid;
+}
+.login-cont{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.und-or{
+    width: 50%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    margin: -60px 0;
+}
+.or{
+    font-size: 19px; 
+}
+.und{
+    width: 100px;
+    border-bottom: 1px solid black;
+}
+
+.login-cont button{
+    background-color: #405cf5;
+    border-radius: 4px;
+    height: 40px;
+    width: 320px;
+    outline: none;
+    border: none;
+}
+form button{
+    font-size: 18px;
+    color: white;
+}
+.signup-cont {
+    background-color: #405cf5;
+    border-radius: 4px;
+    height: 40px;
+    width: 320px;
+    outline: none;
+    border: none;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+.signup-cont a{
+    background-color: unset;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.form-cont{
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-head{
+    font-size: 40px;
+    font-family: 'Suez One', serif;
+    color: #405cf5;
+    margin: -10px 0 -53px 0;
+}
+.error{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 17px;
+    color: red;
+    margin: 5px 0 -5px 5px;
+    height: 14px;
+    /* display: none; */
+}

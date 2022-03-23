@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url Cutter</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
+    <link href="/css/signupstyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="cont">
+        <div class="header">
+            <p>
+                <img src="/img/logo1.png" alt="">
+                <span>URL CUTTER</span>
+                <img src="/img/logo2.png" alt="">
+            </p>
+        </div>
+        <div class="form-cont">
+            <form action="/register" method="post">
+                <p class="login-head">SIGN UP</p>
+                <div class="login-cont">
+                    <div class="email-inp">
+                        <input type="email" required placeholder="Email" name="username" id="username">
+                        <% if(errorMessage == 'hello') { %>
+                            <div class="error">Email already exists</div>
+                        <% } %>
+                    </div>
+                    <div class="name-inp">
+                        <input type="text" required placeholder="Enter Your Name" name="name" id="name">
+                    </div>
+                    <div class="pass-inp">
+                        <input type="password" required placeholder="Password" name="password" id="password">
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </div>
+                <div class="und-or">
+                    <div class="und"></div>
+                    <div class="or">or</div>
+                    <div class="und"></div>
+                </div>
+                <div class="signup-cont">
+                    <a href="/login" role="button">
+                        Log In
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

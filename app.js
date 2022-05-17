@@ -10,7 +10,7 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const findOrCreate = require('mongoose-findorcreate');
 
-const app = express();
+const app = express()
 
 app.use(express.static("public"));
 app.set('view engine', 'ejs');
